@@ -4,9 +4,15 @@ import styles from '../styles/Home.module.css'
 
 import { useState }from 'react';
 
+type WalletDetails = {
+  address: string,
+  privateKey: string,
+  mnemonic: string
+}
+
 export default function Home() {
 
-  const [details, setDetails] = useState();
+  const [details, setDetails] = useState<WalletDetails>();
 
   const generateWallet = async () => {
     console.log('generateWallet triggered');
